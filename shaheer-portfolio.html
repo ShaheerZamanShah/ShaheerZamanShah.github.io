@@ -417,55 +417,76 @@
     top: 0;
     left: 0;
     z-index: 3;
-    width: 92px;
-    height: 92px;
+    width: 58px;
+    height: 58px;
     overflow: hidden;
     pointer-events: none;
   }
   .project-corner-tag::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     clip-path: polygon(0 0, 100% 0, 0 100%);
     z-index: 0;
   }
+  .project-corner-tag::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 82px;
+    height: 1px;
+    z-index: 2;
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    pointer-events: none;
+  }
   .project-corner-tag--deployed::before {
-    background: linear-gradient(140deg, #7b72ff 0%, #5a52e0 55%, #4a43c9 100%);
-    box-shadow: 2px 2px 14px rgba(108,99,255,0.35);
+    background: linear-gradient(145deg, #7d75ff 0%, #6259eb 48%, #4f47d4 100%);
+  }
+  .project-corner-tag--deployed::after {
+    background: linear-gradient(90deg, rgba(255,255,255,0.42), rgba(255,255,255,0.08) 70%, transparent);
   }
   .project-corner-tag--video::before {
-    background: linear-gradient(140deg, #33e0ff 0%, #00c4ef 55%, #00a3c7 100%);
-    box-shadow: 2px 2px 14px rgba(0,212,255,0.3);
+    background: linear-gradient(145deg, #3de4ff 0%, #12c8f0 48%, #00a8cc 100%);
+  }
+  .project-corner-tag--video::after {
+    background: linear-gradient(90deg, rgba(255,255,255,0.55), rgba(255,255,255,0.12) 70%, transparent);
   }
   .project-corner-tag__label {
     position: absolute;
-    top: 22px;
-    left: 6px;
     z-index: 1;
+    display: block;
     font-family: var(--mono);
-    font-size: 10px;
     font-weight: 700;
-    letter-spacing: 1.6px;
     text-transform: uppercase;
-    transform: rotate(-45deg);
-    transform-origin: top left;
     white-space: nowrap;
     line-height: 1;
+    text-align: center;
+    transform: rotate(-45deg);
+    transform-origin: center center;
   }
   .project-corner-tag--deployed .project-corner-tag__label {
+    top: 13px;
+    left: -9px;
+    width: 68px;
+    font-size: 7px;
+    letter-spacing: 1.35px;
     color: #ffffff;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.45);
+    text-shadow: 0 1px 2px rgba(18,14,60,0.55);
   }
   .project-corner-tag--video .project-corner-tag__label {
-    color: #041018;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.55);
+    top: 12px;
+    left: 2px;
+    width: 44px;
+    font-size: 7.5px;
+    letter-spacing: 2.6px;
+    color: #031018;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.65);
   }
   .project-card--link .project-number {
-    padding-top: 6px;
-    padding-left: 6px;
+    padding-top: 2px;
+    padding-left: 2px;
   }
   .project-number {
     font-family: var(--mono);

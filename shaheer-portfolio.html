@@ -777,7 +777,133 @@
   <div class="projects-grid" style="margin-top:48px">
 
     <div class="project-card reveal">
-      <div class="project-number">01 — FYP</div>
+      <div class="project-number">01 — Enterprise AI</div>
+      <div class="project-title">NexusIQ — Enterprise Knowledge Agent</div>
+      <div class="project-desc">Production-grade multi-source RAG platform ingesting Confluence, Notion, Slack, Jira, Google Drive, SharePoint, and PDFs. 10-node LangGraph pipeline with pgvector HNSW + BM25 RRF, cross-encoder reranking, and hallucination guard delivers answers in under 2 seconds.</div>
+      <div class="project-stats">
+        <span class="stat">10-node pipeline</span>
+        <span class="stat">8 data sources</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">PostgreSQL/pgvector</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Next.js 14</span>
+        <span class="stack-tag">Redis</span>
+        <span class="stack-tag">Groq</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">02 — Enterprise AI</div>
+      <div class="project-title">EMKOS — Multi-Agent Knowledge OS</div>
+      <div class="project-desc">Enterprise knowledge platform with LangGraph multi-agent orchestration, hybrid BM25 + Pinecone RAG, JWT/RBAC across 4 roles, and SSE-streamed answers. React 19 dashboard with document upload, audit logs, and single-container Docker deploy on Render.</div>
+      <div class="project-stats">
+        <span class="stat">5 agent routes</span>
+        <span class="stat">Hybrid RAG + RRF</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">React 19</span>
+        <span class="stack-tag">Pinecone</span>
+        <span class="stack-tag">Groq</span>
+        <span class="stack-tag">PostgreSQL</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">03 — Agentic AI</div>
+      <div class="project-title">AgentOps — Eval & Observability Platform</div>
+      <div class="project-desc">Self-hostable platform for LangGraph/LangChain agents with trace ingestion, nested waterfall views, LLM-as-judge eval graders, regression detection, A/B testing, metric-based alerting, and a GitHub Action CI/CD merge gate.</div>
+      <div class="project-stats">
+        <span class="stat">LLM-as-judge evals</span>
+        <span class="stat">CI/CD merge gates</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">LangGraph SDK</span>
+        <span class="stack-tag">Next.js</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">Redis</span>
+        <span class="stack-tag">Celery</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">04 — Agentic AI</div>
+      <div class="project-title">Visual Novel Video Generator</div>
+      <div class="project-desc">Fully autonomous pipeline converting natural-language prompts into 50–70s cinematic videos via LangGraph DAG with 4 specialized agents (Story, Audio, Video, Edit). Natural-language edits with multi-level undo and 70+ passing tests.</div>
+      <div class="project-stats">
+        <span class="stat">70+ tests</span>
+        <span class="stat">10 edit intents</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">Groq Llama 3.3</span>
+        <span class="stack-tag">Pollinations.ai</span>
+        <span class="stack-tag">React/TypeScript</span>
+        <span class="stack-tag">MoviePy</span>
+        <span class="stack-tag">Docker</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">05 — Agentic AI</div>
+      <div class="project-title">PodClips — AI Podcast Shorts Generator</div>
+      <div class="project-desc">Full-stack pipeline extracting viral vertical clips from long-form video/audio. WhisperX transcription, DSP prosody analysis, YAMNet event detection, Ollama LLM clip selection with JSON repair, and GPU-accelerated FFmpeg rendering with karaoke captions.</div>
+      <div class="project-stats">
+        <span class="stat">5-stage pipeline</span>
+        <span class="stat">GPU auto-detect</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">WhisperX</span>
+        <span class="stack-tag">Ollama</span>
+        <span class="stack-tag">FFmpeg</span>
+        <span class="stack-tag">MediaPipe</span>
+        <span class="stack-tag">Librosa</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">06 — Agentic AI</div>
+      <div class="project-title">NexusSDR — AI Sales Development Rep</div>
+      <div class="project-desc">Production-grade B2B sales automation agent with LangGraph state-machine workflow, hybrid ChromaDB/pgvector RAG for sales context, 4-stage personalized cold email sequences, and human-in-the-loop approval via graph interrupts before CRM sync.</div>
+      <div class="project-stats">
+        <span class="stat">HITL graph interrupts</span>
+        <span class="stat">Hybrid RAG + RRF</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Next.js</span>
+        <span class="stack-tag">ChromaDB</span>
+        <span class="stack-tag">Groq</span>
+        <span class="stack-tag">SQLAlchemy</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">07 — Agentic AI</div>
+      <div class="project-title">Lead Generation Agent</div>
+      <div class="project-desc">8-agent LangGraph pipeline that turns a plain-English client description into verified prospects with personalized outreach. Real lead discovery via Tavily + Apify, domain/email/LinkedIn verification, fit scoring, and live SSE dashboard with CSV export.</div>
+      <div class="project-stats">
+        <span class="stat">8 specialized agents</span>
+        <span class="stat">Real lead verification</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">Groq</span>
+        <span class="stack-tag">Tavily</span>
+        <span class="stack-tag">Apify</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Docker</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">08 — FYP</div>
       <div class="project-title">D-VOICE: Pakistan Sign Language Recognition</div>
       <div class="project-desc">Real-time PSL recognition system using MediaPipe landmark extraction and a hybrid TCN+Transformer model achieving 98.25% test accuracy across 188-D feature vectors.</div>
       <div class="project-stats">
@@ -794,24 +920,7 @@
     </div>
 
     <div class="project-card reveal">
-      <div class="project-number">02 — Agentic AI</div>
-      <div class="project-title">Visual Novel Video Generator</div>
-      <div class="project-desc">Fully autonomous pipeline converting natural-language prompts into 50–70s cinematic videos via LangGraph FSM with 4 specialized agents (Story, Audio, Video, Edit). 66/66 passing tests.</div>
-      <div class="project-stats">
-        <span class="stat">95%+ intent accuracy</span>
-        <span class="stat">2–5 min pipeline</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">LangGraph</span>
-        <span class="stack-tag">Groq Llama 3.3</span>
-        <span class="stack-tag">Pollinations.ai</span>
-        <span class="stack-tag">React/TypeScript</span>
-        <span class="stack-tag">MoviePy</span>
-      </div>
-    </div>
-
-    <div class="project-card reveal">
-      <div class="project-number">03 — Agentic AI</div>
+      <div class="project-number">09 — Agentic AI</div>
       <div class="project-title">Multi-Agent Research & Coding System</div>
       <div class="project-desc">Production pipeline converting natural-language tasks into verified Python code via 9 single-responsibility agents with sandboxed execution and hybrid RAG retrieval.</div>
       <div class="project-stats">
@@ -829,7 +938,7 @@
     </div>
 
     <div class="project-card reveal">
-      <div class="project-number">04 — Agentic AI</div>
+      <div class="project-number">10 — Agentic AI</div>
       <div class="project-title">Agentic Research Engine</div>
       <div class="project-desc">Long-form research system with LangGraph state machine, quality-gated retrieval, weighted score fusion (0.7 dense / 0.3 sparse), and consulting-style sectioned report generation.</div>
       <div class="project-stats">
@@ -846,7 +955,24 @@
     </div>
 
     <div class="project-card reveal">
-      <div class="project-number">05 — Full-Stack</div>
+      <div class="project-number">11 — RAG</div>
+      <div class="project-title">AI Customer Support Agent</div>
+      <div class="project-desc">Production-grade RAG system for enterprise customer support with query rewriting, 8-category classification, multi-query hybrid retrieval (dense + keyword RRF), LLM reranking, context compression, and source-grounded citations.</div>
+      <div class="project-stats">
+        <span class="stat">8 query categories</span>
+        <span class="stat">Hybrid RRF search</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangChain</span>
+        <span class="stack-tag">ChromaDB</span>
+        <span class="stack-tag">OpenAI</span>
+        <span class="stack-tag">Streamlit</span>
+        <span class="stack-tag">tiktoken</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-number">12 — Full-Stack</div>
       <div class="project-title">Lyrics Finder & Music Critic App</div>
       <div class="project-desc">Full-stack music discovery platform with Spotify OAuth, audio feature analysis, AI-generated critiques, per-user ratings in MongoDB, and a complete CI/CD pipeline.</div>
       <div class="project-stats">
@@ -862,7 +988,7 @@
     </div>
 
     <div class="project-card reveal">
-      <div class="project-number">06 — Full-Stack</div>
+      <div class="project-number">13 — Full-Stack</div>
       <div class="project-title">Trip Management System</div>
       <div class="project-desc">Full-stack trip planner with real-time weather forecasts, GPS-based location tracking, and a RESTful FastAPI backend on a normalized MySQL schema with one-click route lookup.</div>
       <div class="project-stats">

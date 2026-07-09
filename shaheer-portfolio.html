@@ -389,9 +389,18 @@
     color: inherit;
     display: block;
   }
+  .project-card--has-demo {
+    cursor: pointer;
+  }
+  .project-card-hitarea {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: 16px;
+    text-decoration: none;
+  }
   .project-live-badge {
     position: absolute;
-    top: 14px;
     right: 16px;
     font-family: var(--mono);
     font-size: 10px;
@@ -408,7 +417,31 @@
     z-index: 2;
     pointer-events: none;
   }
-  .project-card--link:hover .project-live-badge {
+  .project-card--has-demo .project-live-badge {
+    top: 42px;
+  }
+  .project-repo-badge {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    z-index: 5;
+    cursor: pointer;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: lowercase;
+    color: var(--accent3);
+    background: rgba(167,139,250,0.12);
+    border: 1px solid rgba(167,139,250,0.32);
+    padding: 4px 10px;
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    text-decoration: none;
+  }
+  .project-card--has-demo:hover .project-live-badge,
+  .project-card:hover .project-repo-badge {
     opacity: 1;
     transform: translateY(0);
   }
@@ -468,7 +501,7 @@
   }
   .project-corner-tag--deployed .project-corner-tag__label {
     top: 13px;
-    left: -9px;
+    left: -18px;
     width: 68px;
     font-size: 7px;
     letter-spacing: 1.35px;
@@ -477,14 +510,20 @@
   }
   .project-corner-tag--video .project-corner-tag__label {
     top: 12px;
-    left: 2px;
+    left: -7px;
     width: 44px;
     font-size: 7.5px;
     letter-spacing: 2.6px;
     color: #031018;
     text-shadow: 0 1px 0 rgba(255,255,255,0.65);
   }
-  .project-card--link .project-number {
+  .project-repo-badge:hover {
+    color: #fff;
+    background: rgba(167,139,250,0.28);
+    border-color: rgba(167,139,250,0.55);
+  }
+  .project-card--deployed .project-number,
+  .project-card--video .project-number {
     padding-top: 2px;
     padding-left: 2px;
   }
@@ -882,6 +921,7 @@
   <div class="projects-grid" style="margin-top:48px">
 
     <div class="project-card reveal">
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/EnterpriseKnowledgeAgent" target="_blank" rel="noopener noreferrer">repo</a>
       <div class="project-number">01 — Enterprise AI</div>
       <div class="project-title">NexusIQ — Enterprise Knowledge Agent</div>
       <div class="project-desc">Production-grade multi-source RAG platform ingesting Confluence, Notion, Slack, Jira, Google Drive, SharePoint, and PDFs. 10-node LangGraph pipeline with pgvector HNSW + BM25 RRF, cross-encoder reranking, and hallucination guard delivers answers in under 2 seconds.</div>
@@ -899,8 +939,10 @@
       </div>
     </div>
 
-    <a class="project-card project-card--link project-card--deployed reveal" href="https://emkos-r707.onrender.com" target="_blank" rel="noopener noreferrer">
+    <div class="project-card project-card--has-demo project-card--deployed reveal">
       <span class="project-corner-tag project-corner-tag--deployed"><span class="project-corner-tag__label">deployed</span></span>
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/EMKOS" target="_blank" rel="noopener noreferrer">repo</a>
+      <a class="project-card-hitarea" href="https://emkos-r707.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Open EMKOS live demo"></a>
       <span class="project-live-badge">click me</span>
       <div class="project-number">02 — Enterprise AI</div>
       <div class="project-title">EMKOS — Multi-Agent Knowledge OS</div>
@@ -917,9 +959,10 @@
         <span class="stack-tag">Groq</span>
         <span class="stack-tag">PostgreSQL</span>
       </div>
-    </a>
+    </div>
 
     <div class="project-card reveal">
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/AgentSense" target="_blank" rel="noopener noreferrer">repo</a>
       <div class="project-number">03 — Agentic AI</div>
       <div class="project-title">AgentOps — Eval & Observability Platform</div>
       <div class="project-desc">Self-hostable platform for LangGraph/LangChain agents with trace ingestion, nested waterfall views, LLM-as-judge eval graders, regression detection, A/B testing, metric-based alerting, and a GitHub Action CI/CD merge gate.</div>
@@ -937,8 +980,10 @@
       </div>
     </div>
 
-    <a class="project-card project-card--link project-card--video reveal" href="https://drive.google.com/drive/folders/1XZXFZgHua2dOXs-tSgSdlTIbOyR_8-mS?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <div class="project-card project-card--has-demo project-card--video reveal">
       <span class="project-corner-tag project-corner-tag--video"><span class="project-corner-tag__label">video</span></span>
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/VisualStoryGenerator" target="_blank" rel="noopener noreferrer">repo</a>
+      <a class="project-card-hitarea" href="https://drive.google.com/drive/folders/1XZXFZgHua2dOXs-tSgSdlTIbOyR_8-mS?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch Visual Novel demo video"></a>
       <span class="project-live-badge">watch demo</span>
       <div class="project-number">04 — Agentic AI</div>
       <div class="project-title">Visual Novel Video Generator</div>
@@ -955,9 +1000,10 @@
         <span class="stack-tag">MoviePy</span>
         <span class="stack-tag">Docker</span>
       </div>
-    </a>
+    </div>
 
     <div class="project-card reveal">
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/Podclips" target="_blank" rel="noopener noreferrer">repo</a>
       <div class="project-number">05 — Agentic AI</div>
       <div class="project-title">PodClips — AI Podcast Shorts Generator</div>
       <div class="project-desc">Full-stack pipeline extracting viral vertical clips from long-form video/audio. WhisperX transcription, DSP prosody analysis, YAMNet event detection, Ollama LLM clip selection with JSON repair, and GPU-accelerated FFmpeg rendering with karaoke captions.</div>
@@ -976,6 +1022,7 @@
     </div>
 
     <div class="project-card reveal">
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/SalesAutomationAgent" target="_blank" rel="noopener noreferrer">repo</a>
       <div class="project-number">06 — Agentic AI</div>
       <div class="project-title">NexusSDR — AI Sales Development Rep</div>
       <div class="project-desc">Production-grade B2B sales automation agent with LangGraph state-machine workflow, hybrid ChromaDB/pgvector RAG for sales context, 4-stage personalized cold email sequences, and human-in-the-loop approval via graph interrupts before CRM sync.</div>
@@ -993,8 +1040,10 @@
       </div>
     </div>
 
-    <a class="project-card project-card--link project-card--deployed reveal" href="https://research-outreach-agent-17yp.onrender.com" target="_blank" rel="noopener noreferrer">
+    <div class="project-card project-card--has-demo project-card--deployed reveal">
       <span class="project-corner-tag project-corner-tag--deployed"><span class="project-corner-tag__label">deployed</span></span>
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/leadGenerationAgent" target="_blank" rel="noopener noreferrer">repo</a>
+      <a class="project-card-hitarea" href="https://research-outreach-agent-17yp.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Open Lead Generation Agent live demo"></a>
       <span class="project-live-badge">click me</span>
       <div class="project-number">07 — Agentic AI</div>
       <div class="project-title">Lead Generation Agent</div>
@@ -1011,9 +1060,10 @@
         <span class="stack-tag">FastAPI</span>
         <span class="stack-tag">Docker</span>
       </div>
-    </a>
+    </div>
 
     <div class="project-card reveal">
+      <a class="project-repo-badge" href="https://github.com/Najamhassan86/VOICE-FYP" target="_blank" rel="noopener noreferrer">repo</a>
       <div class="project-number">08 — FYP</div>
       <div class="project-title">D-VOICE: Pakistan Sign Language Recognition</div>
       <div class="project-desc">Real-time PSL recognition system using MediaPipe landmark extraction and a hybrid TCN+Transformer model achieving 98.25% test accuracy across 188-D feature vectors.</div>
@@ -1031,6 +1081,7 @@
     </div>
 
     <div class="project-card reveal">
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/research_code_decision_agent" target="_blank" rel="noopener noreferrer">repo</a>
       <div class="project-number">09 — Agentic AI</div>
       <div class="project-title">Multi-Agent Research & Coding System</div>
       <div class="project-desc">Production pipeline converting natural-language tasks into verified Python code via 9 single-responsibility agents with sandboxed execution and hybrid RAG retrieval.</div>
@@ -1049,6 +1100,7 @@
     </div>
 
     <div class="project-card reveal">
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/insightgraph-ai-research-assistant" target="_blank" rel="noopener noreferrer">repo</a>
       <div class="project-number">10 — Agentic AI</div>
       <div class="project-title">Agentic Research Engine</div>
       <div class="project-desc">Long-form research system with LangGraph state machine, quality-gated retrieval, weighted score fusion (0.7 dense / 0.3 sparse), and consulting-style sectioned report generation.</div>
@@ -1066,6 +1118,7 @@
     </div>
 
     <div class="project-card reveal">
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/langChain_AI_support_agent" target="_blank" rel="noopener noreferrer">repo</a>
       <div class="project-number">11 — RAG</div>
       <div class="project-title">AI Customer Support Agent</div>
       <div class="project-desc">Production-grade RAG system for enterprise customer support with query rewriting, 8-category classification, multi-query hybrid retrieval (dense + keyword RRF), LLM reranking, context compression, and source-grounded citations.</div>
@@ -1082,8 +1135,10 @@
       </div>
     </div>
 
-    <a class="project-card project-card--link project-card--video reveal" href="https://drive.google.com/drive/folders/1PA3l8fbHPtsZhJF-RNTOxd4J2dnT8sw1?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <div class="project-card project-card--has-demo project-card--video reveal">
       <span class="project-corner-tag project-corner-tag--video"><span class="project-corner-tag__label">video</span></span>
+      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/LyricFinder" target="_blank" rel="noopener noreferrer">repo</a>
+      <a class="project-card-hitarea" href="https://drive.google.com/drive/folders/1PA3l8fbHPtsZhJF-RNTOxd4J2dnT8sw1?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch Lyrics Finder demo video"></a>
       <span class="project-live-badge">watch demo</span>
       <div class="project-number">12 — Full-Stack</div>
       <div class="project-title">Lyrics Finder & Music Critic App</div>
@@ -1098,7 +1153,7 @@
         <span class="stack-tag">MongoDB</span>
         <span class="stack-tag">Spotify API</span>
       </div>
-    </a>
+    </div>
 
     <div class="project-card reveal">
       <div class="project-number">13 — Full-Stack</div>

@@ -412,6 +412,51 @@
     opacity: 1;
     transform: translateY(0);
   }
+  .project-corner-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 68px;
+    height: 68px;
+    overflow: hidden;
+    pointer-events: none;
+    font-family: var(--mono);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .project-corner-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+  }
+  .project-corner-tag--deployed::before {
+    background: linear-gradient(135deg, rgba(108,99,255,0.95), rgba(90,82,224,0.85));
+    box-shadow: 2px 2px 12px rgba(108,99,255,0.25);
+  }
+  .project-corner-tag--video::before {
+    background: linear-gradient(135deg, rgba(0,212,255,0.95), rgba(0,168,204,0.85));
+    box-shadow: 2px 2px 12px rgba(0,212,255,0.2);
+  }
+  .project-corner-tag--deployed {
+    color: #fff;
+    padding: 11px 0 0 7px;
+  }
+  .project-corner-tag--video {
+    color: #080c14;
+    padding: 11px 0 0 9px;
+  }
+  .project-card--link .project-number {
+    padding-top: 4px;
+    padding-left: 4px;
+  }
   .project-number {
     font-family: var(--mono);
     font-size: 11px;
@@ -823,7 +868,8 @@
       </div>
     </div>
 
-    <a class="project-card project-card--link reveal" href="https://emkos-r707.onrender.com" target="_blank" rel="noopener noreferrer">
+    <a class="project-card project-card--link project-card--deployed reveal" href="https://emkos-r707.onrender.com" target="_blank" rel="noopener noreferrer">
+      <span class="project-corner-tag project-corner-tag--deployed">deployed</span>
       <span class="project-live-badge">click me</span>
       <div class="project-number">02 — Enterprise AI</div>
       <div class="project-title">EMKOS — Multi-Agent Knowledge OS</div>
@@ -860,7 +906,8 @@
       </div>
     </div>
 
-    <a class="project-card project-card--link reveal" href="https://drive.google.com/drive/folders/1XZXFZgHua2dOXs-tSgSdlTIbOyR_8-mS?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <a class="project-card project-card--link project-card--video reveal" href="https://drive.google.com/drive/folders/1XZXFZgHua2dOXs-tSgSdlTIbOyR_8-mS?usp=sharing" target="_blank" rel="noopener noreferrer">
+      <span class="project-corner-tag project-corner-tag--video">video</span>
       <span class="project-live-badge">watch demo</span>
       <div class="project-number">04 — Agentic AI</div>
       <div class="project-title">Visual Novel Video Generator</div>
@@ -915,7 +962,8 @@
       </div>
     </div>
 
-    <a class="project-card project-card--link reveal" href="https://research-outreach-agent-17yp.onrender.com" target="_blank" rel="noopener noreferrer">
+    <a class="project-card project-card--link project-card--deployed reveal" href="https://research-outreach-agent-17yp.onrender.com" target="_blank" rel="noopener noreferrer">
+      <span class="project-corner-tag project-corner-tag--deployed">deployed</span>
       <span class="project-live-badge">click me</span>
       <div class="project-number">07 — Agentic AI</div>
       <div class="project-title">Lead Generation Agent</div>
@@ -1003,7 +1051,8 @@
       </div>
     </div>
 
-    <a class="project-card project-card--link reveal" href="https://drive.google.com/drive/folders/1PA3l8fbHPtsZhJF-RNTOxd4J2dnT8sw1?usp=sharing" target="_blank" rel="noopener noreferrer">
+    <a class="project-card project-card--link project-card--video reveal" href="https://drive.google.com/drive/folders/1PA3l8fbHPtsZhJF-RNTOxd4J2dnT8sw1?usp=sharing" target="_blank" rel="noopener noreferrer">
+      <span class="project-corner-tag project-corner-tag--video">video</span>
       <span class="project-live-badge">watch demo</span>
       <div class="project-number">12 — Full-Stack</div>
       <div class="project-title">Lyrics Finder & Music Critic App</div>

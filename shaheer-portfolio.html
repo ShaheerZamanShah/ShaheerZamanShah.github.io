@@ -404,56 +404,93 @@
     right: 16px;
     font-family: var(--mono);
     font-size: 10px;
-    letter-spacing: 1.5px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
     text-transform: lowercase;
-    color: var(--accent2);
-    background: rgba(0,229,255,0.1);
-    border: 1px solid rgba(0,229,255,0.25);
-    padding: 4px 10px;
+    color: #7df9ff;
+    background: linear-gradient(135deg, rgba(0,212,255,0.16) 0%, rgba(0,229,255,0.08) 100%);
+    border: 1px solid rgba(0,229,255,0.35);
+    padding: 5px 12px;
     border-radius: 20px;
     opacity: 0;
-    transform: translateY(-6px);
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(-8px) scale(0.94);
+    transition:
+      opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
+      box-shadow 0.35s ease,
+      background 0.35s ease,
+      border-color 0.35s ease,
+      color 0.35s ease;
     z-index: 2;
     pointer-events: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.08);
   }
   .project-card--has-demo .project-live-badge {
-    top: 42px;
+    top: 52px;
   }
   .project-repo-badge {
     position: absolute;
-    top: 14px;
+    top: 12px;
     right: 16px;
     z-index: 5;
     cursor: pointer;
     font-family: var(--mono);
     font-size: 10px;
-    letter-spacing: 1.5px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
     text-transform: lowercase;
-    color: var(--accent3);
-    background: rgba(167,139,250,0.12);
-    border: 1px solid rgba(167,139,250,0.32);
-    padding: 4px 10px;
+    color: #d4c4ff;
+    background: linear-gradient(135deg, rgba(167,139,250,0.2) 0%, rgba(108,99,255,0.1) 100%);
+    border: 1px solid rgba(167,139,250,0.42);
+    padding: 5px 12px;
     border-radius: 20px;
     opacity: 0;
-    transform: translateY(-6px);
-    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateY(-8px) scale(0.94);
+    transition:
+      opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
+      box-shadow 0.35s ease,
+      background 0.35s ease,
+      border-color 0.35s ease,
+      color 0.35s ease;
     text-decoration: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.06);
   }
-  .project-card--has-demo:hover .project-live-badge,
   .project-card:hover .project-repo-badge {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    transition-delay: 0.06s;
+  }
+  .project-card--has-demo:hover .project-live-badge {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition-delay: 0.14s;
+    color: #b8fcff;
+    background: linear-gradient(135deg, rgba(0,229,255,0.22) 0%, rgba(0,212,255,0.12) 100%);
+    border-color: rgba(0,229,255,0.55);
+    box-shadow: 0 4px 18px rgba(0,229,255,0.22), inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+  .project-repo-badge:hover {
+    color: #fff;
+    background: linear-gradient(135deg, rgba(167,139,250,0.38) 0%, rgba(108,99,255,0.22) 100%);
+    border-color: rgba(196,181,253,0.72);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 22px rgba(108,99,255,0.38), 0 0 0 1px rgba(167,139,250,0.15), inset 0 1px 0 rgba(255,255,255,0.14);
   }
   .project-corner-tag {
     position: absolute;
     top: 0;
     left: 0;
     z-index: 3;
-    width: 58px;
-    height: 58px;
+    width: 64px;
+    height: 64px;
     overflow: hidden;
     pointer-events: none;
+    filter: drop-shadow(0 4px 14px rgba(0,0,0,0.28));
   }
   .project-corner-tag::before {
     content: '';
@@ -467,24 +504,32 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 82px;
-    height: 1px;
+    width: 92px;
+    height: 1.5px;
     z-index: 2;
     transform: rotate(-45deg);
     transform-origin: top left;
     pointer-events: none;
   }
   .project-corner-tag--deployed::before {
-    background: linear-gradient(145deg, #7d75ff 0%, #6259eb 48%, #4f47d4 100%);
+    background:
+      linear-gradient(155deg, rgba(255,255,255,0.22) 0%, transparent 42%),
+      linear-gradient(145deg, #b4a8ff 0%, #7c74ff 22%, #6c63ff 48%, #5248e8 72%, #3f38c9 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), inset -1px 0 0 rgba(255,255,255,0.06);
   }
   .project-corner-tag--deployed::after {
-    background: linear-gradient(90deg, rgba(255,255,255,0.42), rgba(255,255,255,0.08) 70%, transparent);
+    background: linear-gradient(90deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.28) 45%, rgba(255,255,255,0.06) 80%, transparent 100%);
+    box-shadow: 0 0 8px rgba(180,168,255,0.45);
   }
   .project-corner-tag--video::before {
-    background: linear-gradient(145deg, #3de4ff 0%, #12c8f0 48%, #00a8cc 100%);
+    background:
+      linear-gradient(155deg, rgba(255,255,255,0.35) 0%, transparent 42%),
+      linear-gradient(145deg, #7af0ff 0%, #3de4ff 22%, #22d3ee 48%, #06b6d4 72%, #0891b2 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.38), inset -1px 0 0 rgba(255,255,255,0.1);
   }
   .project-corner-tag--video::after {
-    background: linear-gradient(90deg, rgba(255,255,255,0.55), rgba(255,255,255,0.12) 70%, transparent);
+    background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.4) 45%, rgba(255,255,255,0.1) 80%, transparent 100%);
+    box-shadow: 0 0 8px rgba(61,228,255,0.5);
   }
   .project-corner-tag__label {
     position: absolute;
@@ -500,27 +545,22 @@
     transform-origin: center center;
   }
   .project-corner-tag--deployed .project-corner-tag__label {
-    top: 13px;
-    left: -18px;
-    width: 68px;
+    top: 18px;
+    left: -17px;
+    width: 70px;
     font-size: 7px;
-    letter-spacing: 1.35px;
+    letter-spacing: 1.5px;
     color: #ffffff;
-    text-shadow: 0 1px 2px rgba(18,14,60,0.55);
+    text-shadow: 0 1px 2px rgba(24,18,72,0.65), 0 0 12px rgba(255,255,255,0.15);
   }
   .project-corner-tag--video .project-corner-tag__label {
-    top: 12px;
-    left: -7px;
+    top: 17px;
+    left: -6px;
     width: 44px;
     font-size: 7.5px;
-    letter-spacing: 2.6px;
-    color: #031018;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.65);
-  }
-  .project-repo-badge:hover {
-    color: #fff;
-    background: rgba(167,139,250,0.28);
-    border-color: rgba(167,139,250,0.55);
+    letter-spacing: 2.7px;
+    color: #042028;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.75), 0 0 10px rgba(255,255,255,0.2);
   }
   .project-card--deployed .project-number,
   .project-card--video .project-number {

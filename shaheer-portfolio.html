@@ -3,7 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shaheer Zaman Shah | AI/ML & Full-Stack Engineer</title>
+<title>Shaheer Zaman Shah | AI/ML &amp; Agentic AI Developer</title>
+<meta name="description" content="Muhammad Shaheer Zaman Shah, AI/ML and Agentic AI Developer in Islamabad. AI Engineer at SovaVis building agentic systems, RAG platforms, and full-stack products.">
+<meta name="theme-color" content="#080c14">
+<meta property="og:title" content="Shaheer Zaman Shah | AI/ML &amp; Agentic AI Developer">
+<meta property="og:description" content="Agentic AI systems, RAG platforms, and full-stack products, built and deployed end-to-end.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shaheerzamanshah.github.io/shaheer-portfolio.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236c63ff'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='18' font-weight='700' text-anchor='middle' fill='white'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -15,7 +22,7 @@
     --accent2: #00d4ff;
     --accent3: #a78bfa;
     --text: #e2e8f0;
-    --muted: #64748b;
+    --muted: #94a3b8;
     --mono: 'JetBrains Mono', monospace;
     --sans: 'Space Grotesk', sans-serif;
     --glow: 0 0 40px rgba(108,99,255,0.3);
@@ -23,7 +30,8 @@
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; overflow-x: hidden; }
+  html { scroll-behavior: smooth; scroll-padding-top: 40px; overflow-x: hidden; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent2); outline-offset: 3px; }
 
   body {
     background: var(--bg);
@@ -187,7 +195,7 @@
     animation: fadeUp 0.8s ease 0.9s forwards;
   }
   .hero-cta {
-    display: flex; gap: 16px;
+    display: flex; flex-wrap: wrap; gap: 16px;
     opacity: 0;
     animation: fadeUp 0.8s ease 1.1s forwards;
   }
@@ -205,7 +213,7 @@
     border: none;
   }
   .btn-primary {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    background: linear-gradient(135deg, #5a52e0, #0277a8);
     color: #fff;
   }
   .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(108,99,255,0.4); }
@@ -303,7 +311,7 @@
   .section-label {
     font-family: var(--mono);
     font-size: 11px;
-    color: var(--accent);
+    color: var(--accent3);
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 16px;
@@ -313,7 +321,8 @@
   .section-title {
     font-size: clamp(32px, 4vw, 52px);
     font-weight: 700;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
+    line-height: 1.15;
     margin-bottom: 16px;
   }
 
@@ -322,7 +331,7 @@
   .skills-intro { color: var(--muted); max-width: 600px; margin-bottom: 60px; font-size: 15px; line-height: 1.8; }
   .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 24px;
   }
   .skill-card {
@@ -358,21 +367,60 @@
 
   /* PROJECTS */
   #projects { max-width: 1200px; }
+  .section-intro { color: var(--muted); max-width: 600px; font-size: 15px; line-height: 1.8; }
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 28px;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 48px;
   }
   .project-card {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
     background: var(--surface);
-    border: 1px solid rgba(108,99,255,0.1);
+    border: 1px solid rgba(108,99,255,0.14);
     border-radius: 16px;
-    padding: 32px;
+    padding: 28px;
     transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    cursor: default;
     position: relative;
     overflow: hidden;
   }
+  .project-card--featured {
+    grid-column: span 3;
+    padding: 32px;
+    background: linear-gradient(160deg, rgba(108,99,255,0.1), var(--surface) 55%);
+    border-color: rgba(108,99,255,0.24);
+  }
+  .project-card--featured .project-title { font-size: 21px; }
+  .project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; min-height: 24px; }
+  .project-status {
+    flex-shrink: 0;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .project-status--live { color: #4ade80; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); }
+  .project-status--live::before { content: ''; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #22c55e; margin-right: 7px; vertical-align: 1px; }
+  .project-status--video { color: var(--accent2); background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); }
+  .project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 24px; position: relative; z-index: 1; }
+  .project-action {
+    display: inline-flex; align-items: center; gap: 8px;
+    min-height: 44px;
+    padding: 8px 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.25s, border-color 0.25s, color 0.25s;
+  }
+  .project-action--demo { color: #fff; background: rgba(108,99,255,0.28); border: 1px solid rgba(139,132,255,0.6); }
+  .project-action--demo:hover { background: #5a52e0; border-color: #8f88ff; }
+  .project-action--repo { color: var(--text); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.14); }
+  .project-action--repo:hover { color: var(--accent2); border-color: var(--accent2); }
   .project-card::after {
     content: '';
     position: absolute; inset: 0;
@@ -380,201 +428,19 @@
     opacity: 0;
     transition: opacity 0.4s;
     border-radius: 16px;
+    pointer-events: none;
   }
   .project-card:hover { transform: translateY(-6px); border-color: rgba(108,99,255,0.3); box-shadow: 0 20px 60px rgba(108,99,255,0.15); }
   .project-card:hover::after { opacity: 1; }
-  .project-card--link {
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-  }
-  .project-card--has-demo {
-    cursor: pointer;
-  }
-  .project-card-hitarea {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    border-radius: 16px;
-    text-decoration: none;
-  }
-  .project-live-badge {
-    position: absolute;
-    right: 16px;
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.6px;
-    text-transform: lowercase;
-    color: #7df9ff;
-    background: linear-gradient(135deg, rgba(0,212,255,0.16) 0%, rgba(0,229,255,0.08) 100%);
-    border: 1px solid rgba(0,229,255,0.35);
-    padding: 5px 12px;
-    border-radius: 20px;
-    opacity: 0;
-    transform: translateY(-8px) scale(0.94);
-    transition:
-      opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
-      box-shadow 0.35s ease,
-      background 0.35s ease,
-      border-color 0.35s ease,
-      color 0.35s ease;
-    z-index: 2;
-    pointer-events: none;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.08);
-  }
-  .project-card--has-demo .project-live-badge {
-    top: 52px;
-  }
-  .project-repo-badge {
-    position: absolute;
-    top: 12px;
-    right: 16px;
-    z-index: 5;
-    cursor: pointer;
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.6px;
-    text-transform: lowercase;
-    color: #d4c4ff;
-    background: linear-gradient(135deg, rgba(167,139,250,0.2) 0%, rgba(108,99,255,0.1) 100%);
-    border: 1px solid rgba(167,139,250,0.42);
-    padding: 5px 12px;
-    border-radius: 20px;
-    opacity: 0;
-    transform: translateY(-8px) scale(0.94);
-    transition:
-      opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.45s cubic-bezier(0.34, 1.2, 0.64, 1),
-      box-shadow 0.35s ease,
-      background 0.35s ease,
-      border-color 0.35s ease,
-      color 0.35s ease;
-    text-decoration: none;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.06);
-  }
-  .project-card:hover .project-repo-badge {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition-delay: 0.06s;
-  }
-  .project-card--has-demo:hover .project-live-badge {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition-delay: 0.14s;
-    color: #b8fcff;
-    background: linear-gradient(135deg, rgba(0,229,255,0.22) 0%, rgba(0,212,255,0.12) 100%);
-    border-color: rgba(0,229,255,0.55);
-    box-shadow: 0 4px 18px rgba(0,229,255,0.22), inset 0 1px 0 rgba(255,255,255,0.12);
-  }
-  .project-repo-badge:hover {
-    color: #fff;
-    background: linear-gradient(135deg, rgba(167,139,250,0.38) 0%, rgba(108,99,255,0.22) 100%);
-    border-color: rgba(196,181,253,0.72);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 22px rgba(108,99,255,0.38), 0 0 0 1px rgba(167,139,250,0.15), inset 0 1px 0 rgba(255,255,255,0.14);
-  }
-  .project-corner-tag {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-    width: 52px;
-    height: 52px;
-    overflow: hidden;
-    pointer-events: none;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
-  }
-  .project-corner-tag::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    clip-path: polygon(0 0, 100% 0, 0 100%);
-    z-index: 0;
-  }
-  .project-corner-tag::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 74px;
-    height: 1px;
-    z-index: 2;
-    transform: rotate(-45deg);
-    transform-origin: top left;
-    pointer-events: none;
-  }
-  .project-corner-tag--deployed::before {
-    background:
-      linear-gradient(150deg, rgba(255,255,255,0.14) 0%, transparent 38%),
-      linear-gradient(140deg, #8f88ff 0%, #6c63ff 55%, #5a52e0 100%);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
-  }
-  .project-corner-tag--deployed::after {
-    background: linear-gradient(90deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 60%, transparent 100%);
-  }
-  .project-corner-tag--video::before {
-    background:
-      linear-gradient(150deg, rgba(255,255,255,0.18) 0%, transparent 38%),
-      linear-gradient(140deg, #5ce4ff 0%, #00d4ff 55%, #00b4d8 100%);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.24);
-  }
-  .project-corner-tag--video::after {
-    background: linear-gradient(90deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.18) 60%, transparent 100%);
-  }
-  .project-corner-tag__label {
-    position: absolute;
-    z-index: 1;
-    display: block;
-    font-family: var(--mono);
-    font-weight: 700;
-    text-transform: uppercase;
-    white-space: nowrap;
-    line-height: 1;
-    text-align: center;
-    transform: rotate(-45deg);
-    transform-origin: center center;
-  }
-  .project-corner-tag--deployed .project-corner-tag__label {
-    top: 19px;
-    left: -9px;
-    width: 62px;
-    font-size: 6.5px;
-    letter-spacing: 1.4px;
-    color: #ffffff;
-    text-shadow: 0 1px 2px rgba(20,16,64,0.5);
-  }
-  .project-corner-tag--video .project-corner-tag__label {
-    top: 18px;
-    left: 1px;
-    width: 40px;
-    font-size: 7px;
-    letter-spacing: 2.5px;
-    color: #032028;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.6);
-  }
-  .project-card--deployed .project-number,
-  .project-card--video .project-number {
-    padding-top: 2px;
-    padding-left: 2px;
-  }
   .project-number {
     font-family: var(--mono);
     font-size: 11px;
-    color: var(--accent);
-    letter-spacing: 2px;
-    margin-bottom: 16px;
+    color: var(--accent3);
+    letter-spacing: 1px;
   }
-  .project-title { font-size: 18px; font-weight: 600; margin-bottom: 12px; }
+  .project-title { font-size: 18px; line-height: 1.35; font-weight: 600; margin-bottom: 12px; }
   .project-desc { color: var(--muted); font-size: 14px; line-height: 1.7; margin-bottom: 24px; }
-  .project-stats { display: flex; gap: 20px; margin-bottom: 20px; }
+  .project-stats { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 20px; }
   .stat { font-family: var(--mono); font-size: 11px; color: var(--accent2); }
   .project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
   .stack-tag {
@@ -589,15 +455,15 @@
 
   /* ABOUT / CODE SECTION */
   #about { max-width: 1200px; }
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; }
   .code-block {
     background: var(--surface);
     border: 1px solid rgba(108,99,255,0.15);
     border-radius: 12px;
     overflow: hidden;
     font-family: var(--mono);
-    font-size: 13px;
-    line-height: 2;
+    font-size: 12px;
+    line-height: 1.8;
     position: sticky;
     top: 100px;
   }
@@ -612,7 +478,7 @@
   .dot-y { background: #febc2e; }
   .dot-g { background: #28c840; }
   .code-filename { font-size: 11px; color: var(--muted); margin-left: 8px; }
-  .code-body { padding: 24px 28px; overflow-x: auto; }
+  .code-body { padding: 24px 28px; overflow-x: auto; white-space: nowrap; }
   .c-kw { color: #c792ea; }
   .c-fn { color: #82aaff; }
   .c-str { color: #c3e88d; }
@@ -769,16 +635,49 @@
   @media (max-width: 900px) {
     nav { padding: 18px 24px; }
     nav.scrolled { padding: 14px 24px; }
-    .nav-links { display: none; position: fixed; top: 0; right: 0; width: 280px; height: 100vh; background: var(--surface); flex-direction: column; padding: 80px 40px; gap: 32px; z-index: 200; transform: translateX(100%); transition: transform 0.4s ease; }
-    .nav-links.open { display: flex; transform: translateX(0); }
-    .menu-btn { display: block; z-index: 201; }
+    .nav-links { position: fixed; top: 0; right: 0; width: min(280px, 80vw); height: 100vh; height: 100dvh; background: var(--surface); border-left: 1px solid rgba(108,99,255,0.2); flex-direction: column; padding: 88px 36px 36px; gap: 8px; z-index: 200; visibility: hidden; transform: translateX(100%); transition: transform 0.35s ease, visibility 0.35s; }
+    .nav-links a { display: block; padding: 12px 0; font-size: 13px; color: var(--text); }
+    .nav-links.open { visibility: visible; transform: translateX(0); }
+    .menu-btn { display: block; z-index: 201; min-width: 44px; min-height: 44px; }
+    .menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+    .project-card, .project-card--featured { grid-column: span 3; padding: 28px; }
     #hero { padding: 100px 24px 60px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+    .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
     .hero-avatar-wrap { order: -1; }
     .avatar-ring { width: 260px; height: 260px; }
     section { padding: 80px 24px; }
-    .about-grid { grid-template-columns: 1fr; gap: 48px; }
+    .about-grid { grid-template-columns: minmax(0, 1fr); gap: 48px; }
     .code-block { position: static; }
+  }
+
+  @media (max-width: 1100px) and (min-width: 901px) {
+    nav, nav.scrolled { padding-left: 32px; padding-right: 32px; }
+    .nav-links { gap: 28px; }
+    section, #hero { padding-left: 32px; padding-right: 32px; }
+    .project-card, .project-card--featured { grid-column: span 3; padding: 28px; }
+  }
+  @media (max-width: 680px) {
+    .projects-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    .project-card, .project-card--featured { grid-column: auto; padding: 24px; }
+    #hero { padding-top: 112px; }
+    .hero-grid { gap: 32px; }
+    .avatar-ring { width: 190px; height: 190px; }
+    .hero-eyebrow { letter-spacing: 1px; margin-bottom: 16px; }
+    .hero-role { margin-bottom: 20px; }
+    .hero-desc { margin-bottom: 32px; }
+    .hero-cta .btn, .contact-link { flex: 1 1 auto; justify-content: center; }
+    .btn, .contact-link { letter-spacing: 1px; }
+    .email-block { padding: 18px 20px; font-size: 13px; }
+    .timeline { padding-left: 28px; }
+    .timeline-item::before { left: -34px; }
+    footer { padding: 32px 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+    #particles { display: none; }
   }
 
   /* PARTICLES CANVAS */
@@ -817,7 +716,7 @@
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="menu-btn" id="menuBtn" aria-label="Menu">
+  <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-controls="navLinks" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -826,7 +725,7 @@
 <section id="hero">
   <div class="hero-grid">
     <div class="hero-content">
-      <div class="hero-eyebrow">// Full-Stack Developer & AI/ML Engineer</div>
+      <div class="hero-eyebrow">// AI/ML &amp; Agentic AI Developer</div>
       <h1 class="hero-name">
         Muhammad<br>
         <span class="highlight">Shaheer</span><br>
@@ -836,8 +735,8 @@
         &gt; <span class="typed-text" id="typedRole"></span><span class="cursor"></span>
       </div>
       <p class="hero-desc">
-        Building intelligent systems at the intersection of AI, agentic pipelines, 
-        and full-stack engineering. CS graduate from FAST-NUCES Islamabad.
+        AI Engineer at SovaVis, building AI applications end-to-end and deploying them
+        to the cloud, from model integration to production. CS graduate from FAST-NUCES Islamabad.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">
@@ -866,366 +765,134 @@
   <div class="section-label reveal">01 / Skills</div>
   <h2 class="section-title reveal">Technical Arsenal</h2>
   <p class="skills-intro reveal">
-    Spanning AI/ML research to production full-stack systems — I work across the entire stack 
-    with a focus on agentic architectures and intelligent pipelines.
+    From agentic AI and retrieval systems to production full-stack products, I work across
+    the whole stack and take projects from model integration to cloud deployment.
   </p>
   <div class="skills-grid">
     <div class="skill-card reveal">
-      <div class="skill-card-icon">🧠</div>
-      <div class="skill-card-title">AI / ML / Computer Vision</div>
+      <div class="skill-card-icon" aria-hidden="true">🤖</div>
+      <h3 class="skill-card-title">Agentic AI</h3>
       <div class="skill-tags">
-        <span class="tag">TensorFlow</span>
-        <span class="tag">LangChain</span>
         <span class="tag">LangGraph</span>
-        <span class="tag">MediaPipe</span>
-        <span class="tag">ChromaDB</span>
-        <span class="tag">HuggingFace</span>
-        <span class="tag">Groq</span>
-        <span class="tag">scikit-learn</span>
-        <span class="tag">FAISS</span>
-        <span class="tag">Pandas/NumPy</span>
+        <span class="tag">State Machines</span>
+        <span class="tag">Interrupts</span>
+        <span class="tag">Checkpointers</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">Multi-Agent Architectures</span>
+        <span class="tag">Groq Cloud</span>
+        <span class="tag">Llama 3.1/3.3</span>
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-card-icon">⚛️</div>
-      <div class="skill-card-title">Frontend</div>
+      <div class="skill-card-icon" aria-hidden="true">🔎</div>
+      <h3 class="skill-card-title">RAG &amp; Retrieval</h3>
       <div class="skill-tags">
-        <span class="tag">React.js</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">Tailwind CSS</span>
-        <span class="tag">Vite</span>
-        <span class="tag">HTML5/CSS3</span>
-        <span class="tag">Axios</span>
-        <span class="tag">WebSocket</span>
+        <span class="tag">Hybrid Search</span>
+        <span class="tag">RRF</span>
+        <span class="tag">Cross-Encoder Reranking</span>
+        <span class="tag">ChromaDB</span>
+        <span class="tag">FAISS</span>
+        <span class="tag">pgvector</span>
+        <span class="tag">BM25</span>
       </div>
     </div>
     <div class="skill-card reveal">
-      <div class="skill-card-icon">⚙️</div>
-      <div class="skill-card-title">Backend</div>
+      <div class="skill-card-icon" aria-hidden="true">🧠</div>
+      <h3 class="skill-card-title">AI / ML / Computer Vision</h3>
+      <div class="skill-tags">
+        <span class="tag">TensorFlow/Keras</span>
+        <span class="tag">MediaPipe</span>
+        <span class="tag">WhisperX</span>
+        <span class="tag">scikit-learn</span>
+        <span class="tag">HuggingFace</span>
+        <span class="tag">Librosa</span>
+        <span class="tag">YAMNet</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">NumPy</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon" aria-hidden="true">⚙️</div>
+      <h3 class="skill-card-title">Backend</h3>
       <div class="skill-tags">
         <span class="tag">FastAPI</span>
         <span class="tag">Node.js</span>
         <span class="tag">Express.js</span>
-        <span class="tag">REST APIs</span>
+        <span class="tag">WebSocket</span>
+        <span class="tag">SSE</span>
+        <span class="tag">SQLAlchemy</span>
+        <span class="tag">Celery</span>
+        <span class="tag">Ollama</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon" aria-hidden="true">📱</div>
+      <h3 class="skill-card-title">Frontend &amp; Mobile</h3>
+      <div class="skill-tags">
+        <span class="tag">React.js</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">Vite</span>
+        <span class="tag">Flutter</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-card-icon" aria-hidden="true">☁️</div>
+      <h3 class="skill-card-title">Data, Cloud &amp; DevOps</h3>
+      <div class="skill-tags">
+        <span class="tag">PostgreSQL</span>
         <span class="tag">MongoDB</span>
         <span class="tag">MySQL</span>
-        <span class="tag">Python</span>
-      </div>
-    </div>
-    <div class="skill-card reveal">
-      <div class="skill-card-icon">💻</div>
-      <div class="skill-card-title">Languages</div>
-      <div class="skill-tags">
-        <span class="tag">Python</span>
-        <span class="tag">JavaScript (ES6+)</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">C/C++</span>
-        <span class="tag">Java</span>
-        <span class="tag">Assembly</span>
-      </div>
-    </div>
-    <div class="skill-card reveal">
-      <div class="skill-card-icon">🛠️</div>
-      <div class="skill-card-title">DevOps & Tools</div>
-      <div class="skill-tags">
-        <span class="tag">Git/GitHub</span>
+        <span class="tag">Redis</span>
+        <span class="tag">AWS</span>
         <span class="tag">Docker</span>
-        <span class="tag">Postman</span>
-        <span class="tag">WordPress</span>
-        <span class="tag">MATLAB</span>
-        <span class="tag">Cisco</span>
-        <span class="tag">EIGRP/OSPF</span>
-      </div>
-    </div>
-    <div class="skill-card reveal">
-      <div class="skill-card-icon">🤖</div>
-      <div class="skill-card-title">Agentic Systems</div>
-      <div class="skill-tags">
-        <span class="tag">Multi-Agent RAG</span>
-        <span class="tag">LangGraph FSM</span>
-        <span class="tag">Vector DBs</span>
-        <span class="tag">BM25 Retrieval</span>
-        <span class="tag">LLM Pipelines</span>
-        <span class="tag">RRF Fusion</span>
+        <span class="tag">Git/GitHub</span>
+        <span class="tag">Render</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" style="max-width:1200px">
+<section id="projects">
   <div class="section-label reveal">02 / Projects</div>
   <h2 class="section-title reveal">Featured Work</h2>
-  <div class="projects-grid" style="margin-top:48px">
+  <p class="section-intro reveal">Live products, agentic systems, and full-stack builds, from EdTech platforms in production to multi-agent research pipelines.</p>
+  <div class="projects-grid">
 
-    <div class="project-card project-card--has-demo project-card--video reveal">
-      <span class="project-corner-tag project-corner-tag--video"><span class="project-corner-tag__label">video</span></span>
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/NexusIQ-EnterpriseKnowledgeAgent.git" target="_blank" rel="noopener noreferrer">repo</a>
-      <a class="project-card-hitarea" href="https://drive.google.com/drive/folders/1RhRdUZUkpDFO7M0lRPdnN7sXX7-w7tn3?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch NexusIQ demo video"></a>
-      <span class="project-live-badge">watch demo</span>
-      <div class="project-number">01 — Enterprise AI</div>
-      <div class="project-title">NexusIQ — Enterprise Knowledge Agent</div>
-      <div class="project-desc">Production-grade multi-source RAG platform ingesting Confluence, Notion, Slack, Jira, Google Drive, SharePoint, and PDFs. 10-node LangGraph pipeline with pgvector HNSW + BM25 RRF, cross-encoder reranking, and hallucination guard for quick, grounded answers.</div>
+    <article class="project-card project-card--featured reveal">
+      <div class="project-top">
+        <div class="project-number">01 — AI EdTech</div>
+        <span class="project-status project-status--live">Live</span>
+      </div>
+      <h3 class="project-title">Rubric — AI-Powered CSS/PMS Exam Prep</h3>
+      <p class="project-desc">Full-stack learning platform for CSS/PMS aspirants with an exam-focused AI chatbot, quizzes, current affairs, and past papers. An OCR + LLM pipeline grades uploaded answer sheets against subject rubrics and returns annotated PDF reports. Live on AWS with authentication, usage limits, batch processing, and an admin dashboard.</p>
       <div class="project-stats">
-        <span class="stat">10-node pipeline</span>
-        <span class="stat">8 data sources</span>
+        <span class="stat">24 subject rubrics</span>
+        <span class="stat">Annotated PDF reports</span>
       </div>
       <div class="project-stack">
-        <span class="stack-tag">LangGraph</span>
-        <span class="stack-tag">PostgreSQL/pgvector</span>
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">Next.js 14</span>
-        <span class="stack-tag">Redis</span>
-        <span class="stack-tag">Groq</span>
-      </div>
-    </div>
-
-    <div class="project-card project-card--has-demo project-card--deployed reveal">
-      <span class="project-corner-tag project-corner-tag--deployed"><span class="project-corner-tag__label">deployed</span></span>
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/EMKOS" target="_blank" rel="noopener noreferrer">repo</a>
-      <a class="project-card-hitarea" href="https://emkos-r707.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Open EMKOS live demo"></a>
-      <span class="project-live-badge">click me</span>
-      <div class="project-number">02 — Enterprise AI</div>
-      <div class="project-title">EMKOS — Multi-Agent Knowledge OS</div>
-      <div class="project-desc">Enterprise knowledge platform with LangGraph multi-agent orchestration, hybrid BM25 + Pinecone RAG, JWT/RBAC across 4 roles, and SSE-streamed answers. React 19 dashboard with document upload, audit logs, and single-container Docker deploy on Render.</div>
-      <div class="project-stats">
-        <span class="stat">5 agent routes</span>
-        <span class="stat">Hybrid RAG + RRF</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">LangGraph</span>
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">React 19</span>
-        <span class="stack-tag">Pinecone</span>
-        <span class="stack-tag">Groq</span>
-        <span class="stack-tag">PostgreSQL</span>
-      </div>
-    </div>
-
-    <div class="project-card project-card--has-demo project-card--video reveal">
-      <span class="project-corner-tag project-corner-tag--video"><span class="project-corner-tag__label">video</span></span>
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/AgentSense" target="_blank" rel="noopener noreferrer">repo</a>
-      <a class="project-card-hitarea" href="https://drive.google.com/drive/folders/1XHsGKyDZ1lvKk_fmBkJXf-Lta0bE8RDs?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch AgentOps demo video"></a>
-      <span class="project-live-badge">watch demo</span>
-      <div class="project-number">03 — Agentic AI</div>
-      <div class="project-title">AgentOps — Eval & Observability Platform</div>
-      <div class="project-desc">Self-hostable platform for LangGraph/LangChain agents with trace ingestion, nested waterfall views, LLM-as-judge eval graders, regression detection, A/B testing, metric-based alerting, and a GitHub Action CI/CD merge gate.</div>
-      <div class="project-stats">
-        <span class="stat">LLM-as-judge evals</span>
-        <span class="stat">CI/CD merge gates</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">LangGraph SDK</span>
         <span class="stack-tag">Next.js</span>
-        <span class="stack-tag">PostgreSQL</span>
-        <span class="stack-tag">Redis</span>
-        <span class="stack-tag">Celery</span>
-      </div>
-    </div>
-
-    <div class="project-card project-card--has-demo project-card--video reveal">
-      <span class="project-corner-tag project-corner-tag--video"><span class="project-corner-tag__label">video</span></span>
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/VisualStoryGenerator" target="_blank" rel="noopener noreferrer">repo</a>
-      <a class="project-card-hitarea" href="https://drive.google.com/drive/folders/1XZXFZgHua2dOXs-tSgSdlTIbOyR_8-mS?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch Visual Novel demo video"></a>
-      <span class="project-live-badge">watch demo</span>
-      <div class="project-number">04 — Agentic AI</div>
-      <div class="project-title">Visual Novel Video Generator</div>
-      <div class="project-desc">Fully autonomous pipeline converting natural-language prompts into 50–70s cinematic videos via LangGraph DAG with 4 specialized agents (Story, Audio, Video, Edit). Natural-language edits with multi-level undo and 70+ passing tests.</div>
-      <div class="project-stats">
-        <span class="stat">70+ tests</span>
-        <span class="stat">10 edit intents</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">LangGraph</span>
-        <span class="stack-tag">Groq Llama 3.3</span>
-        <span class="stack-tag">Pollinations.ai</span>
-        <span class="stack-tag">React/TypeScript</span>
-        <span class="stack-tag">MoviePy</span>
-        <span class="stack-tag">Docker</span>
-      </div>
-    </div>
-
-    <div class="project-card reveal">
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/Podclips" target="_blank" rel="noopener noreferrer">repo</a>
-      <div class="project-number">05 — Agentic AI</div>
-      <div class="project-title">PodClips — AI Podcast Shorts Generator</div>
-      <div class="project-desc">Full-stack pipeline extracting viral vertical clips from long-form video/audio. WhisperX transcription, DSP prosody analysis, YAMNet event detection, Ollama LLM clip selection with JSON repair, and GPU-accelerated FFmpeg rendering with karaoke captions.</div>
-      <div class="project-stats">
-        <span class="stat">5-stage pipeline</span>
-        <span class="stat">GPU auto-detect</span>
-      </div>
-      <div class="project-stack">
+        <span class="stack-tag">TypeScript</span>
         <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">WhisperX</span>
-        <span class="stack-tag">Ollama</span>
-        <span class="stack-tag">FFmpeg</span>
-        <span class="stack-tag">MediaPipe</span>
-        <span class="stack-tag">Librosa</span>
-      </div>
-    </div>
-
-    <div class="project-card reveal">
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/SalesAutomationAgent" target="_blank" rel="noopener noreferrer">repo</a>
-      <div class="project-number">06 — Agentic AI</div>
-      <div class="project-title">NexusSDR — AI Sales Development Rep</div>
-      <div class="project-desc">Production-grade B2B sales automation agent with LangGraph state-machine workflow, hybrid ChromaDB/pgvector RAG for sales context, 4-stage personalized cold email sequences, and human-in-the-loop approval via graph interrupts before CRM sync.</div>
-      <div class="project-stats">
-        <span class="stat">HITL graph interrupts</span>
-        <span class="stat">Hybrid RAG + RRF</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">LangGraph</span>
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">Next.js</span>
-        <span class="stack-tag">ChromaDB</span>
-        <span class="stack-tag">Groq</span>
-        <span class="stack-tag">SQLAlchemy</span>
-      </div>
-    </div>
-
-    <div class="project-card project-card--has-demo project-card--deployed reveal">
-      <span class="project-corner-tag project-corner-tag--deployed"><span class="project-corner-tag__label">deployed</span></span>
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/leadGenerationAgent" target="_blank" rel="noopener noreferrer">repo</a>
-      <a class="project-card-hitarea" href="https://research-outreach-agent-17yp.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Open Lead Generation Agent live demo"></a>
-      <span class="project-live-badge">click me</span>
-      <div class="project-number">07 — Agentic AI</div>
-      <div class="project-title">Lead Generation Agent</div>
-      <div class="project-desc">8-agent LangGraph pipeline that turns a plain-English client description into verified prospects with personalized outreach. Real lead discovery via Tavily + Apify, domain/email/LinkedIn verification, fit scoring, and live SSE dashboard with CSV export.</div>
-      <div class="project-stats">
-        <span class="stat">8 specialized agents</span>
-        <span class="stat">Real lead verification</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">LangGraph</span>
-        <span class="stack-tag">Groq</span>
-        <span class="stack-tag">Tavily</span>
-        <span class="stack-tag">Apify</span>
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">Docker</span>
-      </div>
-    </div>
-
-    <div class="project-card reveal">
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/VOICE" target="_blank" rel="noopener noreferrer">repo</a>
-      <div class="project-number">08 — FYP</div>
-      <div class="project-title">VOICE: Pakistan Sign Language Recognition</div>
-      <div class="project-desc">Real-time PSL recognition system using MediaPipe landmark extraction and a hybrid TCN+Transformer model achieving 98.25% test accuracy across 188-D feature vectors.</div>
-      <div class="project-stats">
-        <span class="stat">98.25% accuracy</span>
-        <span class="stat">100% top-3 accuracy</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">TensorFlow</span>
-        <span class="stack-tag">MediaPipe</span>
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">React/Vite</span>
-        <span class="stack-tag">TCN+Transformer</span>
-      </div>
-    </div>
-
-    <div class="project-card project-card--has-demo project-card--video reveal">
-      <span class="project-corner-tag project-corner-tag--video"><span class="project-corner-tag__label">video</span></span>
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/research_code_decision_agent" target="_blank" rel="noopener noreferrer">repo</a>
-      <a class="project-card-hitarea" href="https://drive.google.com/drive/folders/1ZggEkrytTT4Hh9cGwHLAcV7n2pDhOFhB?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch Multi-Agent Research and Coding System demo video"></a>
-      <span class="project-live-badge">watch demo</span>
-      <div class="project-number">09 — Agentic AI</div>
-      <div class="project-title">Multi-Agent Research & Coding System</div>
-      <div class="project-desc">Production pipeline converting natural-language tasks into verified Python code via 9 single-responsibility agents with sandboxed execution and hybrid RAG retrieval.</div>
-      <div class="project-stats">
-        <span class="stat">9 specialized agents</span>
-        <span class="stat">RRF + Cross-encoder</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">LangChain</span>
-        <span class="stack-tag">FAISS</span>
-        <span class="stack-tag">BM25</span>
-        <span class="stack-tag">HuggingFace</span>
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">Streamlit</span>
-      </div>
-    </div>
-
-    <div class="project-card reveal">
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/insightgraph-ai-research-assistant" target="_blank" rel="noopener noreferrer">repo</a>
-      <div class="project-number">10 — Agentic AI</div>
-      <div class="project-title">Agentic Research Engine</div>
-      <div class="project-desc">Long-form research system with LangGraph state machine, quality-gated retrieval, weighted score fusion (0.7 dense / 0.3 sparse), and consulting-style sectioned report generation.</div>
-      <div class="project-stats">
-        <span class="stat">Hybrid retrieval</span>
-        <span class="stat">Auto-retry loop</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">LangGraph</span>
-        <span class="stack-tag">ChromaDB</span>
-        <span class="stack-tag">Groq</span>
-        <span class="stack-tag">HuggingFace</span>
-        <span class="stack-tag">Streamlit</span>
-      </div>
-    </div>
-
-    <div class="project-card reveal">
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/langChain_AI_support_agent" target="_blank" rel="noopener noreferrer">repo</a>
-      <div class="project-number">11 — RAG</div>
-      <div class="project-title">AI Customer Support Agent</div>
-      <div class="project-desc">Production-grade RAG system for enterprise customer support with query rewriting, 8-category classification, multi-query hybrid retrieval (dense + keyword RRF), LLM reranking, context compression, and source-grounded citations.</div>
-      <div class="project-stats">
-        <span class="stat">8 query categories</span>
-        <span class="stat">Hybrid RRF search</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">LangChain</span>
-        <span class="stack-tag">ChromaDB</span>
         <span class="stack-tag">OpenAI</span>
-        <span class="stack-tag">Streamlit</span>
-        <span class="stack-tag">tiktoken</span>
+        <span class="stack-tag">Azure OCR</span>
+        <span class="stack-tag">Supabase</span>
+        <span class="stack-tag">AWS</span>
       </div>
-    </div>
+      <div class="project-actions">
+        <a class="project-action project-action--demo" href="https://rubric.pk" target="_blank" rel="noopener noreferrer" aria-label="Live demo: Rubric">Live demo <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
 
-    <div class="project-card project-card--has-demo project-card--video reveal">
-      <span class="project-corner-tag project-corner-tag--video"><span class="project-corner-tag__label">video</span></span>
-      <a class="project-repo-badge" href="https://github.com/ShaheerZamanShah/LyricFinder" target="_blank" rel="noopener noreferrer">repo</a>
-      <a class="project-card-hitarea" href="https://drive.google.com/drive/folders/1PA3l8fbHPtsZhJF-RNTOxd4J2dnT8sw1?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch Lyrics Finder demo video"></a>
-      <span class="project-live-badge">watch demo</span>
-      <div class="project-number">12 — Full-Stack</div>
-      <div class="project-title">Lyrics Finder & Music Critic App</div>
-      <div class="project-desc">Full-stack music discovery platform with Spotify OAuth, audio feature analysis, AI-generated critiques, per-user ratings in MongoDB, and a complete CI/CD pipeline.</div>
-      <div class="project-stats">
-        <span class="stat">Spotify OAuth</span>
-        <span class="stat">Live deployed</span>
+    <article class="project-card project-card--featured reveal">
+      <div class="project-top">
+        <div class="project-number">02 — Mobile App</div>
+        <span class="project-status project-status--live">Live</span>
       </div>
-      <div class="project-stack">
-        <span class="stack-tag">React</span>
-        <span class="stack-tag">Node.js/Express</span>
-        <span class="stack-tag">MongoDB</span>
-        <span class="stack-tag">Spotify API</span>
-      </div>
-    </div>
-
-    <div class="project-card reveal">
-      <div class="project-number">13 — Full-Stack</div>
-      <div class="project-title">Trip Management System</div>
-      <div class="project-desc">Full-stack trip planner with real-time weather forecasts, GPS-based location tracking, and a RESTful FastAPI backend on a normalized MySQL schema with one-click route lookup.</div>
-      <div class="project-stats">
-        <span class="stat">Real-time weather</span>
-        <span class="stat">GPS tracking</span>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag">React.js</span>
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">MySQL</span>
-        <span class="stack-tag">Weather API</span>
-        <span class="stack-tag">GPS API</span>
-      </div>
-    </div>
-
-    <div class="project-card project-card--has-demo project-card--deployed reveal">
-      <span class="project-corner-tag project-corner-tag--deployed"><span class="project-corner-tag__label">deployed</span></span>
-      <a class="project-card-hitarea" href="https://www.propelcambridge.com" target="_blank" rel="noopener noreferrer" aria-label="Open Propel live platform"></a>
-      <span class="project-live-badge">click me</span>
-      <div class="project-number">14 — Mobile App</div>
-      <div class="project-title">Propel — O &amp; A Level Exam Prep App</div>
-      <div class="project-desc">Cross-platform Flutter app for Cambridge O &amp; A Level students and teachers, sharing one backend with the Propel web platform. Past-paper practice, AI marking of typed and handwritten answers against the mark scheme, Ask AI, study planner, and classroom tools, with secure PKCE Google sign-in.</div>
+      <h3 class="project-title">Propel — O &amp; A Level Exam Prep App</h3>
+      <p class="project-desc">Cross-platform Flutter app for Cambridge O &amp; A Level students and teachers, sharing one backend with the Propel web platform. Past-paper practice, AI marking of typed and handwritten answers against the mark scheme, Ask AI, study planner, and classroom tools, with secure PKCE Google sign-in.</p>
       <div class="project-stats">
         <span class="stat">Android + iOS</span>
         <span class="stat">Student + teacher portals</span>
@@ -1238,34 +905,17 @@
         <span class="stack-tag">Supabase Auth</span>
         <span class="stack-tag">Express.js</span>
       </div>
-    </div>
-
-    <div class="project-card project-card--has-demo project-card--deployed reveal">
-      <span class="project-corner-tag project-corner-tag--deployed"><span class="project-corner-tag__label">deployed</span></span>
-      <a class="project-card-hitarea" href="https://rubric.pk" target="_blank" rel="noopener noreferrer" aria-label="Open Rubric live app"></a>
-      <span class="project-live-badge">click me</span>
-      <div class="project-number">15 — AI EdTech</div>
-      <div class="project-title">Rubric — AI Exam Evaluation Platform</div>
-      <div class="project-desc">AI evaluation platform for CSS/PMS exam aspirants. Runs OCR on answer-sheet PDFs, grades essays and subject papers against examiner-style rubrics, and returns annotated PDFs with feedback anchored to the student’s own words. Includes a RAG study chatbot, MCQ quizzes, and past papers, deployed on AWS with CI/CD.</div>
-      <div class="project-stats">
-        <span class="stat">24 subject rubrics</span>
-        <span class="stat">Annotated PDF reports</span>
+      <div class="project-actions">
+        <a class="project-action project-action--demo" href="https://www.propelcambridge.com" target="_blank" rel="noopener noreferrer" aria-label="Visit platform: Propel">Visit platform <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="project-stack">
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">Next.js 14</span>
-        <span class="stack-tag">Azure OCR</span>
-        <span class="stack-tag">OpenAI</span>
-        <span class="stack-tag">AWS CDK</span>
-        <span class="stack-tag">DynamoDB</span>
-        <span class="stack-tag">Clerk</span>
-      </div>
-    </div>
+    </article>
 
-    <div class="project-card reveal">
-      <div class="project-number">16 — IoT / Full-Stack</div>
-      <div class="project-title">PiDeck — Raspberry Pi Fleet Control Panel</div>
-      <div class="project-desc">Web control panel for a fleet of Raspberry Pi devices with live terminal, file explorer, system stats, log streaming, remote desktop, and turret control. Devices dial out through a hardened SSH relay, so they work behind routers and firewalls with no port-forwarding. Secured with scrypt-hashed login, signed sessions, and rate limiting.</div>
+    <article class="project-card project-card--featured reveal">
+      <div class="project-top">
+        <div class="project-number">03 — IoT / Full-Stack</div>
+      </div>
+      <h3 class="project-title">PiDeck — Raspberry Pi Fleet Control Panel</h3>
+      <p class="project-desc">Web control panel for a fleet of Raspberry Pi devices with live terminal, file explorer, system stats, log streaming, remote desktop, and turret control. Devices dial out through a hardened SSH relay, so they work behind routers and firewalls with no port-forwarding. Secured with scrypt-hashed login, signed sessions, and rate limiting.</p>
       <div class="project-stats">
         <span class="stat">Zero open device ports</span>
         <span class="stat">Real-time WebSockets</span>
@@ -1280,7 +930,311 @@
         <span class="stack-tag">Docker</span>
         <span class="stack-tag">AWS Lightsail</span>
       </div>
-    </div>
+    </article>
+
+    <article class="project-card project-card--featured reveal">
+      <div class="project-top">
+        <div class="project-number">04 — Final Year Project</div>
+      </div>
+      <h3 class="project-title">VOICE — Pakistan Sign Language Recognition</h3>
+      <p class="project-desc">Real-time sign-to-text and sign-to-speech translator using a hybrid TCN+Transformer model on live camera input, with 98.25% test accuracy and 100% top-3 accuracy across 9 sign classes. Shipped as a full-stack product with an interactive Learn module.</p>
+      <div class="project-stats">
+        <span class="stat">98.25% test accuracy</span>
+        <span class="stat">100% top-3 accuracy</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">Python</span>
+        <span class="stack-tag">TensorFlow</span>
+        <span class="stack-tag">MediaPipe</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">React/Vite</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/VOICE" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: VOICE">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">05 — Enterprise AI</div>
+        <span class="project-status project-status--live">Live</span>
+      </div>
+      <h3 class="project-title">EMKOS — Enterprise Knowledge Platform</h3>
+      <p class="project-desc">Enterprise knowledge platform with LangGraph multi-agent orchestration, hybrid BM25 + Pinecone RAG, JWT/RBAC across 4 roles, and SSE-streamed answers. React 19 dashboard with document upload, audit logs, and single-container Docker deploy on Render.</p>
+      <div class="project-stats">
+        <span class="stat">5 agent routes</span>
+        <span class="stat">Hybrid RAG + RRF</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">React 19</span>
+        <span class="stack-tag">Pinecone</span>
+        <span class="stack-tag">Groq</span>
+        <span class="stack-tag">PostgreSQL</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--demo" href="https://emkos-r707.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Live demo: EMKOS">Live demo <span aria-hidden="true">↗</span></a>
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/EMKOS" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: EMKOS">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">06 — Enterprise AI</div>
+        <span class="project-status project-status--video">Demo video</span>
+      </div>
+      <h3 class="project-title">NexusIQ — Enterprise Knowledge Agent</h3>
+      <p class="project-desc">Production-grade multi-source RAG platform ingesting Confluence, Notion, Slack, Jira, Google Drive, SharePoint, and PDFs. 10-node LangGraph pipeline with pgvector HNSW + BM25 RRF, cross-encoder reranking, and hallucination guard for quick, grounded, SSE-streamed answers.</p>
+      <div class="project-stats">
+        <span class="stat">10-node pipeline</span>
+        <span class="stat">8 data sources</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">PostgreSQL/pgvector</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Next.js 14</span>
+        <span class="stack-tag">Redis</span>
+        <span class="stack-tag">Groq</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--demo" href="https://drive.google.com/drive/folders/1RhRdUZUkpDFO7M0lRPdnN7sXX7-w7tn3?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch demo: NexusIQ">Watch demo <span aria-hidden="true">↗</span></a>
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/NexusIQ-EnterpriseKnowledgeAgent" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: NexusIQ">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">07 — Agentic AI</div>
+      </div>
+      <h3 class="project-title">NexusSDR — Autonomous Sales Development Rep</h3>
+      <p class="project-desc">AI sales development rep that qualifies inbound leads and drafts outreach autonomously. Checkpointed LangGraph workflow with a human-in-the-loop review step, hybrid ChromaDB/pgvector RAG for sales context, and dual-model routing to balance cost and latency.</p>
+      <div class="project-stats">
+        <span class="stat">HITL graph interrupts</span>
+        <span class="stat">Hybrid RAG + RRF</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Next.js</span>
+        <span class="stack-tag">ChromaDB</span>
+        <span class="stack-tag">Groq</span>
+        <span class="stack-tag">SQLAlchemy</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/NexusSDR-SalesAutomationAgent" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: NexusSDR">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">08 — Agentic AI</div>
+        <span class="project-status project-status--live">Live</span>
+      </div>
+      <h3 class="project-title">Autonomous B2B Lead Generation &amp; Outreach Agent</h3>
+      <p class="project-desc">8-agent LangGraph pipeline that turns a plain-English client description into verified prospects with personalized outreach. Live lead discovery via Tavily + Apify, dual-layer heuristic + LLM scoring, live SSE dashboard, and CSV/JSON reporting, with a single review step before sending.</p>
+      <div class="project-stats">
+        <span class="stat">8 specialized agents</span>
+        <span class="stat">Real lead verification</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">Groq</span>
+        <span class="stack-tag">Tavily</span>
+        <span class="stack-tag">Apify</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Docker</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--demo" href="https://research-outreach-agent-17yp.onrender.com" target="_blank" rel="noopener noreferrer" aria-label="Live demo: Autonomous B2B Lead Generation &amp; Outreach Agent">Live demo <span aria-hidden="true">↗</span></a>
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/leadGenerationAgent" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: Autonomous B2B Lead Generation &amp; Outreach Agent">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">09 — Agentic AI</div>
+        <span class="project-status project-status--video">Demo video</span>
+      </div>
+      <h3 class="project-title">Agentic AI Visual Novel Video Generator</h3>
+      <p class="project-desc">Autonomous natural-language-to-video pipeline built on a 4-agent LangGraph state machine. Generates 50–70s cinematic videos with gender-aware TTS on free APIs, plus natural-language edits with multi-level undo and 70+ passing tests.</p>
+      <div class="project-stats">
+        <span class="stat">70+ tests</span>
+        <span class="stat">10 edit intents</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">Groq Llama 3.3</span>
+        <span class="stack-tag">Pollinations.ai</span>
+        <span class="stack-tag">React/TypeScript</span>
+        <span class="stack-tag">MoviePy</span>
+        <span class="stack-tag">Docker</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--demo" href="https://drive.google.com/drive/folders/1XZXFZgHua2dOXs-tSgSdlTIbOyR_8-mS?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch demo: Agentic AI Visual Novel Video Generator">Watch demo <span aria-hidden="true">↗</span></a>
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/VisualStoryGenerator" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: Agentic AI Visual Novel Video Generator">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">10 — Agentic AI</div>
+        <span class="project-status project-status--video">Demo video</span>
+      </div>
+      <h3 class="project-title">Autonomous Multi-Agent Research &amp; Coding System</h3>
+      <p class="project-desc">9-agent pipeline (Planner → Coder → Executor → Critic/Reflector → Writer) that turns natural-language tasks into verified Python code, with hybrid RAG retrieval and sandboxed, quality-gated execution.</p>
+      <div class="project-stats">
+        <span class="stat">9 specialized agents</span>
+        <span class="stat">RRF + Cross-encoder</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangChain</span>
+        <span class="stack-tag">FAISS</span>
+        <span class="stack-tag">BM25</span>
+        <span class="stack-tag">HuggingFace</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">Streamlit</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--demo" href="https://drive.google.com/drive/folders/1ZggEkrytTT4Hh9cGwHLAcV7n2pDhOFhB?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch demo: Autonomous Multi-Agent Research &amp; Coding System">Watch demo <span aria-hidden="true">↗</span></a>
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/research_system" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: Autonomous Multi-Agent Research &amp; Coding System">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">11 — Agentic AI</div>
+        <span class="project-status project-status--video">Demo video</span>
+      </div>
+      <h3 class="project-title">AgentOps — Eval, Observability &amp; CI/CD Gate</h3>
+      <p class="project-desc">Self-hostable platform for LangGraph/LangChain and any HTTP-callable agent. OTLP trace ingestion, nested waterfall views, live WebSocket cost/latency tailing, LLM-as-judge evals, regression detection, A/B experiments, and a GitHub Action that blocks merges on eval scores.</p>
+      <div class="project-stats">
+        <span class="stat">LLM-as-judge evals</span>
+        <span class="stat">CI/CD merge gates</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">LangGraph SDK</span>
+        <span class="stack-tag">Next.js</span>
+        <span class="stack-tag">PostgreSQL</span>
+        <span class="stack-tag">Redis</span>
+        <span class="stack-tag">Celery</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--demo" href="https://drive.google.com/drive/folders/1XHsGKyDZ1lvKk_fmBkJXf-Lta0bE8RDs?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch demo: AgentOps">Watch demo <span aria-hidden="true">↗</span></a>
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/AgentSense" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: AgentOps">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">12 — Agentic AI</div>
+      </div>
+      <h3 class="project-title">PodClips — AI Podcast Shorts Generator</h3>
+      <p class="project-desc">Full-stack pipeline extracting viral vertical clips from long-form video/audio. WhisperX transcription, DSP prosody analysis, YAMNet event detection, Ollama LLM clip selection with JSON repair, and GPU-accelerated FFmpeg rendering with karaoke captions.</p>
+      <div class="project-stats">
+        <span class="stat">5-stage pipeline</span>
+        <span class="stat">GPU auto-detect</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">WhisperX</span>
+        <span class="stack-tag">Ollama</span>
+        <span class="stack-tag">FFmpeg</span>
+        <span class="stack-tag">MediaPipe</span>
+        <span class="stack-tag">Librosa</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/Podclips" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: PodClips">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">13 — Agentic AI</div>
+      </div>
+      <h3 class="project-title">Agentic Research Engine</h3>
+      <p class="project-desc">Long-form research system with LangGraph state machine, quality-gated retrieval, weighted score fusion (0.7 dense / 0.3 sparse), and consulting-style sectioned report generation.</p>
+      <div class="project-stats">
+        <span class="stat">Hybrid retrieval</span>
+        <span class="stat">Auto-retry loop</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangGraph</span>
+        <span class="stack-tag">ChromaDB</span>
+        <span class="stack-tag">Groq</span>
+        <span class="stack-tag">HuggingFace</span>
+        <span class="stack-tag">Streamlit</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/insightgraph-ai-research-assistant" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: Agentic Research Engine">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">14 — RAG</div>
+      </div>
+      <h3 class="project-title">AI Customer Support Agent</h3>
+      <p class="project-desc">Production-grade RAG system for enterprise customer support with query rewriting, 8-category classification, multi-query hybrid retrieval (dense + keyword RRF), LLM reranking, context compression, and source-grounded citations.</p>
+      <div class="project-stats">
+        <span class="stat">8 query categories</span>
+        <span class="stat">Hybrid RRF search</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">LangChain</span>
+        <span class="stack-tag">ChromaDB</span>
+        <span class="stack-tag">OpenAI</span>
+        <span class="stack-tag">Streamlit</span>
+        <span class="stack-tag">tiktoken</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/langChain_AI_support_agent" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: AI Customer Support Agent">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">15 — Full-Stack</div>
+        <span class="project-status project-status--video">Demo video</span>
+      </div>
+      <h3 class="project-title">Lyrics Finder & Music Critic App</h3>
+      <p class="project-desc">Full-stack music discovery platform with Spotify OAuth, audio feature analysis, AI-generated critiques, per-user ratings in MongoDB, and a complete CI/CD pipeline.</p>
+      <div class="project-stats">
+        <span class="stat">Spotify OAuth</span>
+        <span class="stat">Live deployed</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">React</span>
+        <span class="stack-tag">Node.js/Express</span>
+        <span class="stack-tag">MongoDB</span>
+        <span class="stack-tag">Spotify API</span>
+      </div>
+      <div class="project-actions">
+        <a class="project-action project-action--demo" href="https://drive.google.com/drive/folders/1PA3l8fbHPtsZhJF-RNTOxd4J2dnT8sw1?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Watch demo: Lyrics Finder & Music Critic App">Watch demo <span aria-hidden="true">↗</span></a>
+        <a class="project-action project-action--repo" href="https://github.com/ShaheerZamanShah/LyricFinder" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository: Lyrics Finder & Music Critic App">GitHub <span aria-hidden="true">↗</span></a>
+      </div>
+    </article>
+
+    <article class="project-card reveal">
+      <div class="project-top">
+        <div class="project-number">16 — Full-Stack</div>
+      </div>
+      <h3 class="project-title">Trip Management System</h3>
+      <p class="project-desc">Full-stack trip planner with real-time weather forecasts, GPS-based location tracking, and a RESTful FastAPI backend on a normalized MySQL schema with one-click route lookup.</p>
+      <div class="project-stats">
+        <span class="stat">Real-time weather</span>
+        <span class="stat">GPS tracking</span>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag">React.js</span>
+        <span class="stack-tag">FastAPI</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">Weather API</span>
+        <span class="stack-tag">GPS API</span>
+      </div>
+    </article>
 
   </div>
 </section>
@@ -1292,22 +1246,23 @@
   <div class="about-grid" style="margin-top:48px">
     <div class="about-text">
       <p>
-        I'm a Computer Science graduate from FAST-NUCES Islamabad, specializing in AI/ML systems 
-        and full-stack development. I build things that actually work — from real-time sign 
-        language recognition to fully autonomous video generation pipelines.
+        I'm an AI Engineer at SovaVis and a Computer Science graduate from FAST-NUCES Islamabad.
+        I build AI applications end-to-end and deploy them to the cloud, from model integration
+        to production.
       </p>
       <p>
-        My focus is on agentic AI: systems that can plan, retrieve, reason, and act with 
-        minimal human intervention. I use LangGraph, LangChain, and Groq to architect 
-        multi-agent pipelines that ship to production, not just demos.
+        My focus is agentic AI: systems that plan, retrieve, reason, and act with minimal human
+        intervention. I use LangGraph, LangChain, and Groq to build multi-agent pipelines with
+        hybrid retrieval and human-in-the-loop review.
       </p>
       <p>
-        Beyond AI, I'm a full-stack engineer comfortable across the entire stack — FastAPI 
-        backends, React frontends, MongoDB/MySQL databases, and WebSocket real-time systems.
+        That work spans products people use: Rubric, which grades CSS/PMS answer sheets;
+        Propel, a mobile app for O &amp; A Level students; and PiDeck, a control panel for
+        Raspberry Pi fleets.
       </p>
       <p>
-        When not coding: event organiser for university societies, competitive programmer, 
-        reader, traveller, and occasional sketcher.
+        Away from work, I organise university society events, enter inter-university
+        tech competitions, and enjoy open source, competitive programming, and sketching.
       </p>
     </div>
     <div>
@@ -1321,11 +1276,12 @@
         <div class="code-body">
           <div><span class="c-kw">class</span> <span class="c-fn">ShaheerZamanShah</span> <span class="c-bracket">{</span></div>
           <div style="margin-left:20px">&nbsp;</div>
-          <div style="margin-left:20px"><span class="c-cm">// Building AI that thinks & acts</span></div>
+          <div style="margin-left:20px"><span class="c-cm">// Building AI that thinks &amp; acts</span></div>
           <div style="margin-left:20px">&nbsp;</div>
           <div style="margin-left:20px"><span class="c-prop">name</span> <span class="c-bracket">=</span> <span class="c-str">'Muhammad Shaheer Zaman Shah'</span></div>
           <div style="margin-left:20px"><span class="c-prop">location</span> <span class="c-bracket">=</span> <span class="c-str">'Islamabad, Pakistan 🇵🇰'</span></div>
           <div style="margin-left:20px"><span class="c-prop">university</span> <span class="c-bracket">=</span> <span class="c-str">'FAST-NUCES'</span></div>
+          <div style="margin-left:20px"><span class="c-prop">role</span> <span class="c-bracket">=</span> <span class="c-str">'AI Engineer @ SovaVis'</span></div>
           <div style="margin-left:20px"><span class="c-prop">email</span> <span class="c-bracket">=</span> <span class="c-str">'shaheerzaman023@gmail.com'</span></div>
           <div style="margin-left:20px">&nbsp;</div>
           <div style="margin-left:20px"><span class="c-fn">focusAreas</span><span class="c-bracket">() {</span></div>
@@ -1348,7 +1304,6 @@
           <div style="margin-left:40px"><span class="c-kw">return</span> <span class="c-bracket">[</span></div>
           <div style="margin-left:60px"><span class="c-str">'Open-source'</span><span class="c-bracket">,</span></div>
           <div style="margin-left:60px"><span class="c-str">'Competitive Programming'</span><span class="c-bracket">,</span></div>
-          <div style="margin-left:60px"><span class="c-str">'Reading & Travelling'</span><span class="c-bracket">,</span></div>
           <div style="margin-left:60px"><span class="c-str">'Sketching'</span></div>
           <div style="margin-left:40px"><span class="c-bracket">]</span></div>
           <div style="margin-left:20px"><span class="c-bracket">}</span></div>
@@ -1366,30 +1321,28 @@
   <div class="timeline" style="margin-top:48px">
     <div class="timeline-item reveal">
       <div class="timeline-date">JUNE 2026 — PRESENT</div>
-      <div class="timeline-role">Agentic AI Engineer</div>
-      <div class="timeline-company">Upwork · Remote</div>
+      <h3 class="timeline-role">AI Engineer</h3>
+      <div class="timeline-company">SovaVis · Islamabad (On-site)</div>
       <ul class="timeline-desc">
-        <li>Provide agentic AI services to international clients on Upwork — building multi-agent pipelines, RAG systems, and autonomous AI workflows tailored to client needs.</li>
-        <li>Design and deliver production-ready LangGraph/LangChain solutions including lead generation agents, knowledge bases, and custom automation tools.</li>
+        <li>Build AI applications end-to-end and deploy them to the cloud (AWS), from model integration to production.</li>
       </ul>
     </div>
     <div class="timeline-item reveal">
       <div class="timeline-date">JULY 2025 — SEPTEMBER 2025</div>
-      <div class="timeline-role">Web Development Intern</div>
+      <h3 class="timeline-role">Web Development Intern</h3>
       <div class="timeline-company">Digital Empowerment Network · Islamabad</div>
       <ul class="timeline-desc">
-        <li>Developed and maintained responsive web pages using HTML, CSS, JavaScript, and React.js, improving UI consistency across the platform.</li>
-        <li>Collaborated with a team of developers to deliver features on schedule, participating in code reviews and Agile sprints.</li>
-        <li>Gained hands-on experience with REST API integration and front-end performance optimisation.</li>
+        <li>Developed responsive React.js pages and integrated REST APIs.</li>
+        <li>Worked in Agile sprints and took part in code reviews.</li>
       </ul>
     </div>
     <div class="timeline-item reveal">
       <div class="timeline-date">2023 — PRESENT</div>
-      <div class="timeline-role">Freelance Web Developer</div>
+      <h3 class="timeline-role">Agentic AI &amp; Full-Stack Developer</h3>
       <div class="timeline-company">Fiverr · Remote</div>
       <ul class="timeline-desc">
-        <li>Deliver custom web development projects for international clients — landing pages, portfolios, and small-business websites.</li>
-        <li>Manage the full project lifecycle: requirements gathering, design, development, testing, and client handoff.</li>
+        <li>Deliver AI-driven automation, chatbots, and agentic workflow solutions alongside full-stack web builds for international clients.</li>
+        <li>Handle projects end-to-end, from scoping to deployment.</li>
       </ul>
     </div>
   </div>
@@ -1398,14 +1351,14 @@
     <div class="section-label reveal" style="margin-bottom:16px">Education</div>
     <div class="timeline">
       <div class="timeline-item reveal">
-        <div class="timeline-date">2022 — June 2026</div>
+        <div class="timeline-date">2022 — JUNE 2026</div>
         <div class="timeline-role">Bachelor of Science in Computer Science</div>
         <div class="timeline-company">FAST-NUCES, Islamabad</div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-date">2020 — 2022</div>
-        <div class="timeline-role">Intermediate Certificate (HSSC)</div>
-        <div class="timeline-company">FBISE</div>
+        <div class="timeline-role">FSc Pre-Engineering</div>
+        <div class="timeline-company">School and College for Boys HITEC</div>
       </div>
     </div>
   </div>
@@ -1426,11 +1379,11 @@
     </a>
   </div>
   <div class="contact-links reveal">
-    <a href="https://www.linkedin.com/in/muhammad-shaheer-zaman-shah-722b4435a" target="_blank" class="contact-link">
+    <a href="https://www.linkedin.com/in/muhammad-shaheer-zaman-shah-722b4435a" target="_blank" rel="noopener noreferrer" class="contact-link">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
       LinkedIn
     </a>
-    <a href="https://github.com/ShaheerZamanShah" target="_blank" class="contact-link">
+    <a href="https://github.com/ShaheerZamanShah" target="_blank" rel="noopener noreferrer" class="contact-link">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
       GitHub
     </a>
@@ -1474,7 +1427,7 @@ const iv = setInterval(() => {
 }, 80);
 
 // ── TYPED ROLE ──
-const roles = ['AI/ML Engineer', 'Agentic AI Builder', 'Full-Stack Developer', 'LangGraph Architect'];
+const roles = ['AI Engineer @ SovaVis', 'Agentic AI Developer', 'RAG Systems Builder', 'Full-Stack Developer'];
 let ri = 0, ci = 0, del = false;
 const el = document.getElementById('typedRole');
 function type() {
@@ -1494,9 +1447,15 @@ setTimeout(type, 1600);
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', scrollY > 50);
 });
-document.getElementById('menuBtn').addEventListener('click', () => {
-  document.getElementById('navLinks').classList.toggle('open');
-});
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+function setMenu(open) {
+  navLinks.classList.toggle('open', open);
+  menuBtn.setAttribute('aria-expanded', open);
+}
+menuBtn.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+document.addEventListener('click', e => { if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) setMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
 // ── SCROLL REVEAL ──
 const obs = new IntersectionObserver(entries => {
@@ -1582,7 +1541,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
     const t = document.querySelector(a.getAttribute('href'));
-    if (t) { t.scrollIntoView({ behavior: 'smooth' }); document.getElementById('navLinks').classList.remove('open'); }
+    if (t) { t.scrollIntoView(); setMenu(false); }
   });
 });
 </script>
